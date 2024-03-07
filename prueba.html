@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    background-color: lightsteelblue;
+    transition: background-color 0.5s ease;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  body.dark-theme {
+    background-color: #333333;
+    color: #ffffff;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Opacidad reducida */
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+
+  header nav ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    opacity: 0.8; /* Opacidad reducida */
+  }
+
+  header nav ul li a:hover {
+    opacity: 1;
+  }
+
+  #gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 200px);
+    grid-template-rows: repeat(5, 200px);
+    grid-gap: 20px;
+    margin-top: 100px;
+    margin-right: 150px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px; /* Ajustar el ancho máximo según sea necesario */
+  }
+
+  .image {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,1);
+    cursor:pointer;
+  }
+
+  .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    width: 400px; /* Set the width to 400px */
+    height: auto; /* Set the height to auto */
+    text-align: center;
+    border-radius: 10px;
+  }
+
+  .modal-content img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  #toggleTheme {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: #9fdee9;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px; 
+    margin-right: 100px;
+  }
+
+  #searchInput {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+
+
+  .dropdown {
+    margin-right: 20px; /* Ajuste de margen entre el botón y el menú desplegable */
+  }
+
+  .dropbtn {
+    background-color: #9fdee9;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 160px;
+    max-height: 250px; /* Mostrar hasta 6 opciones */
+    overflow-y: auto; /* Agregar barra de desplazamiento si es necesario */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <ul>
+      <input type="text" id="searchInput" placeholder="Buscar...">
+      <li style="margin-top: 10px;"><a href="#" id="resetFilters" class="category">Eliminar filtros</a></li>
+
+      <div class="dropdown">
+        <button class="dropbtn">Categorías</button>
+        <div class="dropdown-content" id="categories">
+          <!-- Las opciones de categoría se agregarán aquí dinámicamente con JavaScript -->
+        </div>
+      </div>
+     
+      <!-- Agrega más categorías según sea necesario -->
+      <button id="toggleTheme">Cambiar tema</button>
+    </ul>
+  </nav>
+
+</header>
+
+<div id="gallery">
+    <div class="image" data-category="acción, sobrenatural, fantasía" data-score="8.5"><img src="ao no Exorcist.webp" alt="Ao no Exorcist"></div>
+    <div class="image" data-category="misterio, terror, sobrenatural, thriller, gore" data-score="9.0"><img src="another.webp" alt="Another"></div>
+    <div class="image" data-category="acción, ciencia ficción, comedia dramática" data-score="9.0"><img src="asesination.webp" alt="Asesination Classroom"></div>
+    <div class="image" data-category="acción, artes marciales, shonen" data-score="8.5"><img src="baki.webp" alt="Baki"></div>
+    <div class="image" data-category="acción, ciencia ficción, fantasía, seinen" data-score="8.5"><img src="black bullet.webp" alt="Black Bullet"></div>
+    <div class="image" data-category="acción, comedia, fantasía, magia, shonen" data-score="9.0"><img src="black clover.webp" alt="Black Clover"></div>
+    <div class="image" data-category="acción, aventura, comedia, superpoderes, shonen" data-score="8.5"><img src="boruto.webp" alt="Boruto"></div>
+    <div class="image" data-category="acción, comedia, superpoderes, escolar, shonen" data-score="7.8"><img src="boku-no-hero.webp" alt="Boku no Hero"></div>
+    <div class="image" data-category="deportes, psicológico, shonen" data-score="8.5"><img src="blue lock.webp" alt="Blue Lock"></div>
+    <div class="image" data-category="acción, aventura, comedia, sobrenatural, shonen" data-score="8.5"><img src="chainsawman.webp" alt="Chainsaw Man"></div>
+    <div class="image" data-category="escolar, psicológico" data-score="9.0"><img src="classroom-of-the-elite.webp" alt="Classroom of the Elite"></div>
+    <div class="image" data-category="acción, drama, mecha, romance, ciencia ficción" data-score="8.5"><img src="darling in the franxx.webp" alt="Darling in the Franxx"></div>
+    <div class="image" data-category="misterio, psicológico, sobrenatural, thriller" data-score="8.5"><img src="Death-Note.webp" alt="Death Note"></div>
+    <div class="image" data-category="acción, aventura, comedia, shonen, superpoderes" data-score="8.5"><img src="Digimon.webp" alt="Digimon"></div>
+    <div class="image" data-category="aventura, ciencia, shonen" data-score="8.5"><img src="dr.stone.webp" alt="Dr. Stone"></div>
+    <div class="image" data-category="acción, aventura, comedia, fantasía, shonen, superpoderes" data-score="8.5"><img src="dragon ball gt.webp" alt="Dragon Ball GT"></div>
+    <div class="image" data-category="acción, aventura, comedia, fantasía, shonen, superpoderes" data-score="8.5"><img src="dragon-ball-super.webp" alt="Dragon Ball Super"></div>
+    <div class="image" data-category="acción, aventura, comedia, fantasía, shonen, superpoderes" data-score="8.5"><img src="dragon-ball-z.webp" alt="Dragon Ball Z"></div>
+    <div class="image" data-category="acción, aventura, comedia, fantasía, shonen, superpoderes" data-score="8.5"><img src="dragon-ball-z-kai.webp" alt="Dragon Ball Z Kai"></div>
+    <div class="image" data-category="aventura, ciencia, shonen" data-score="8.5"><img src="dr.stone.webp" alt="Dr. Stone"></div>
+    <div class="image" data-category="acción, sobrenatural, fantasía, shonen" data-score="8.5"><img src="fire-force.webp" alt="Fire Force"></div>
+    <div class="image" data-category="ficción de aventuras, drama, género fantástico, shonen" data-score="8.5"><img src="frieren.webp" alt="Frieren: Beyond Journey's End"></div>
+    <div class="image" data-category="comedia, romance, seinen" data-score="8.5"><img src="Fuufu Ijou, Koibito Miman.webp" alt="Fuufu Ijou, Koibito Miman"></div>
+    <div class="image" data-category="acción, fantasía, harem, isekai, magia, militar, romance" data-score="8.5"><img src="Genjitsu Shugi Yuusha no Oukoku Saikenki.webp" alt="Genjitsu Shugi Yuusha no Oukoku Saikenki"></div>
+    <div class="image" data-category="acción, aventura, drama, horror, psicológico, seinen" data-score="8.5"><img src="hell's paradise.webp" alt="Hell's Paradise"></div>
+    <div class="image" data-category="acción, demonios, escolar, sobrenatural, shonen" data-score="8.5"><img src="Kabaneri of the Iron Fortress.webp" alt="Kabaneri of the Iron Fortress"></div>
+    <div class="image" data-category="acción, aventura, comedia, magia, fantasía, shonen" data-score="9.0"><img src="kenja no mago.webp" alt="Kenja no Mago"></div>
+    <div class="image" data-category="acción, demonios, histórico, sobrenatural, shonen" data-score="9.0"><img src="Kimetsu-no-Yaiba.webp" alt="Kimetsu no Yaiba"></div>
+    <div class="image" data-category="acción, aventura, fantasía, isekai" data-score="9.0"><img src="La-Eminencia-de-la-Sombra.webp" alt="La Eminencia de la Sombra"></div>
+    <div class="image" data-category="aventura, drama, fantasía, isekai" data-score="9.0"><img src="Mushoku-Tensei.webp" alt="Mushoku Tensei"></div>
+    <div class="image" data-category="acción, aventura, comedia, fantasía, sobrenatural, shonen" data-score="9.0"><img src="nanatsu no taizai.webp" alt="Nanatsu no Taizai"></div>
+    <div class="image" data-category="acción, aventura, comedia, superpoderes, shonen" data-score="9.0"><img src="naruto.webp" alt="Naruto"></div>
+    <div class="image" data-category="acción, aventura, comedia, superpoderes, shonen" data-score="9.0"><img src="naruto-shippuden.webp" alt="Naruto Shippuden"></div>
+    <div class="image" data-category="acción, aventura, comedia, fantasía, harem, magia" data-score="9.0"><img src="Noumin Kanren no Skill bakka Agetetara.webp" alt="Noumin Kanren no Skill bakka Agetetara Nazeka"></div>
+    <div class="image" data-category="drama, acción" data-score="8.5"><img src="lycoris.webp" alt="Lycoris Recoil"></div>
+    <div class="image" data-category="acción, aventura, comedia, drama, fantasía, shonen" data-score="8.5"><img src="One-Piece.webp" alt="One Piece"></div>
+    <div class="image" data-category="acción, comedia, parodia, sci-fi, seinen, superpoderes" data-score="9.0"><img src="one punch man.webp" alt="One Punch Man"></div>
+    <div class="image" data-category="drama, romance, seinen" data-score="9.0"><img src="oshi no ko.webp" alt="Oshi no Ko"></div>
+    <div class="image" data-category="acción, aventura, comedia, fantasía, shonen" data-score="9.0"><img src="pokemon.webp" alt="Pokemon"></div>
+    <div class="image" data-category="comedia, drama, romance, slice of life" data-score="9.0"><img src="rent-a-girlfriend.webp" alt="Rent a Girlfriend"></div>
+    <div class="image" data-category="acción, drama, fantasía, horror, misterio, shonen" data-score="9.0"><img src="shingeki no kyojin.webp" alt="Shingeki no Kyojin"></div>
+    <div class="image" data-category="comedia, drama, romance, seinen" data-score="9.0"><img src="Sono Bisque Doll wa Koi wo Suru.webp" alt="Sono Bisque Doll"></div>
+    <div class="image" data-category="acción, aventura, fantasía, sobrenatural" data-score="9.0"><img src="solo-leveling.webp" alt="Solo Leveling"></div>
+    <div class="image" data-category="acción, comedia, espías, shonen" data-score="9.0"><img src="spy x family.webp" alt="Spy x Family"></div>
+    <div class="image" data-category="acción, aventura, fantasía, romance, sci-fi" data-score="9.0"><img src="sword art online.webp" alt="Sword Art Online"></div>
+    <div class="image" data-category="misterio, psicológico, sobrenatural, shonen" data-score="9.0"><img src="talentless nana.webp" alt="Talentless Nana"></div>
+    <div class="image" data-category="ciencia ficción, misterio" data-score="9.5"><img src="tengoku.webp" alt="Tengoku Daimakyou"></div>
+    <div class="image" data-category="misterio, psicológico, suspenso, shonen" data-score="9.0"><img src="The-Promised-Neverland.webp" alt="The Promised Neverland"></div>
+    <div class="image" data-category="drama, horror, misterio, psicológico, seinen, sobrenatural" data-score="9.0"><img src="Tokyo-Ghoul.webp" alt="Tokyo Ghoul"></div>
+    <div class="image" data-category="drama, horror, misterio, psicológico, seinen, sobrenatural" data-score="9.0"><img src="Tokyo-Ghoul-RE.webp" alt="Tokyo Ghoul RE"></div>
+    <div class="image" data-category="drama, horror, misterio, psicológico, seinen, sobrenatural" data-score="9.0"><img src="tokyo-ghoul-√A.webp" alt="Tokyo Ghoul √A"></div>
+    <div class="image" data-category="acción, drama, romance, escolar, shonen" data-score="9.0"><img src="Tokyo Revengers.webp" alt="Tokyo Revengers"></div>
+    <div class="image" data-category="comedia, romance, shonen" data-score="9.0"><img src="Tomo-chan.webp" alt="Tomo-chan"></div>
+    <div class="image" data-category="misterio, psicológico, romance, sobrenatural" data-score="9.0"><img src="yofukashi no uta.webp" alt="Yofukashi no Uta"></div>
+    <div class="image" data-category="drama, música, romance, escolar, shonen" data-score="9.0"><img src="your lie in april.webp" alt="Your Lie in April"></div>
+    <div class="image" data-category="comedia, horror, psicológico, seinen, sobrenatural" data-score="9.0"><img src="zom 100.webp" alt="Zom 100"></div>
+    
+    
+</div>
+<script>
+const images = document.querySelectorAll("#gallery .image img");
+
+images.forEach(image => {
+  image.addEventListener("click", () => {
+    const source = image.src;
+    const alt = image.alt;
+    const category = image.parentElement.dataset.category;
+    const score = image.parentElement.dataset.score; // Obtener la puntuación desde el atributo data-score
+    const modal = document.createElement("div");
+    modal.classList.add("modal");
+    modal.innerHTML = `<div class="modal-content">
+                            <img src="${source}" alt="${alt}">
+                            <h2>${alt}</h2>
+                            <p>Categoría: ${category}</p>
+                            <p>Puntuación: ${score}</p>
+                        </div>`;
+    document.body.appendChild(modal);
+    
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        modal.remove();
+      }
+    });
+  });
+});
+
+const toggleThemeButton = document.getElementById("toggleTheme");
+const body = document.querySelector("body");
+
+toggleThemeButton.addEventListener("click", () => {
+  body.classList.toggle("dark-theme");
+});
+
+const searchInput = document.getElementById("searchInput");
+const allImages = document.querySelectorAll("#gallery .image");
+
+searchInput.addEventListener("input", () => {
+  const searchTerm = searchInput.value.toLowerCase();
+  allImages.forEach(image => {
+    const altText = image.querySelector("img").alt.toLowerCase();
+    const category = image.dataset.category.toLowerCase();
+    if (altText.includes(searchTerm) || category.includes(searchTerm)) {
+      image.style.display = "block";
+    } else {
+      image.style.display = "none";
+    }
+  });
+});
+
+const categories = document.querySelectorAll(".category");
+
+categories.forEach(category => {
+  category.addEventListener("click", () => {
+    const categoryName = category.dataset.category;
+    allImages.forEach(image => {
+      const imageCategory = image.dataset.category;
+      if (categoryName === imageCategory) {
+        image.style.display = "block";
+      } else {
+        image.style.display = "none";
+      }
+    });
+  });
+});
+
+const resetFiltersButton = document.getElementById("resetFilters");
+
+resetFiltersButton.addEventListener("click", () => {
+  // Reiniciar el campo de búsqueda
+  searchInput.value = "";
+  // Mostrar todas las imágenes
+  allImages.forEach(image => {
+    image.style.display = "block";
+  });
+});
+
+</script>
+<script>
+(function() {
+  // Obtener todas las categorías únicas de los elementos con la clase "image"
+  const categories = [];
+
+  document.querySelectorAll('.image').forEach(element => {
+    const categoryString = element.getAttribute('data-category');
+    const categoryArray = categoryString.split(', ');
+    categoryArray.forEach(category => {
+      if (!categories.includes(category)) {
+        categories.push(category);
+      }
+    });
+  });
+
+  // Crear opciones de categoría en el menú desplegable
+  const categoriesDropdown = document.getElementById('categories');
+  categories.forEach(category => {
+    const option = document.createElement('a');
+    option.textContent = category;
+    option.href = '#';
+    option.addEventListener('click', function() {
+      filterImages(category);
+    });
+    categoriesDropdown.appendChild(option);
+  });
+
+  function filterImages(category) {
+    // Mostrar solo las imágenes que tienen la categoría seleccionada
+    const images = document.querySelectorAll('.image');
+    images.forEach(image => {
+      const categoriesString = image.getAttribute('data-category');
+      const categoriesArray = categoriesString.split(', ');
+      if (categoriesArray.includes(category)) {
+        image.style.display = 'block';
+      } else {
+        image.style.display = 'none';
+      }
+    });
+  }
+})();
+</script>
+<script>
+  // Función para redireccionar según el tamaño de la pantalla
+  function redirigirSegunTamanoPantalla() {
+    // Obtener el ancho de la pantalla
+    var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+    // Si el ancho de la pantalla es menor a 420px y no estamos en la versión móvil
+    if (screenWidth < 420 && !esPaginaMobile()) {
+      // Redireccionar a la página móvil
+      window.location.href = 'telefono.html';
+    } else if (screenWidth >= 420 && esPaginaMobile()) {
+      // Si el ancho de la pantalla es mayor o igual a 420px y estamos en la versión móvil
+      // Redireccionar a la página para computadora
+      window.location.href = 'prueba.html';
+    }
+  }
+
+  // Función para verificar si estamos en la versión móvil
+  function esPaginaMobile() {
+    return window.location.href.indexOf('telefono.html') !== -1;
+  }
+
+  // Llamar a la función al cargar la página
+  redirigirSegunTamanoPantalla();
+
+  // También puedes llamar a esta función cuando se redimensiona la ventana
+  window.onresize = function() {
+    redirigirSegunTamanoPantalla();
+  };
+</script>
+</body>
+</html>

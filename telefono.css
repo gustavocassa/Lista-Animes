@@ -1,0 +1,382 @@
+body{
+    display:none;
+}
+/* Media Query para pantallas de hasta 480px de ancho (teléfonos) */
+@media (max-width: 420px) {
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #00000000;
+        display:block;
+        width:100%;
+        height: auto;
+        overflow-y: hidden; /* Habilita el desplazamiento solo en el section */
+        }
+       
+    header {
+        background-color: #01237D;
+        color: #fff;
+        padding: 10px;
+        display: flex;
+        align-items: center; /* Alinea verticalmente los elementos al centro */
+        overflow: hidden; /* Habilita el desplazamiento solo en el section */
+        height: 50px;
+        z-index: 1000; /* Asegura que el encabezado esté por encima de otros elementos */
+
+    }
+   
+    #contador-divs {
+      background-color: #238AE5; /* Cambia el color de fondo si es necesario */
+      color:white;
+      padding: 10px;
+      width:220px;
+      margin-left:60px;
+      border: 1px solid black; /* Cambia el estilo del borde si es necesario */
+      border-radius: 8px;
+      z-index: 9999; /* Ajusta según sea necesario para asegurarte de que esté por encima de todo */
+  }
+  #filterBtn, #resetBtn {
+    margin-bottom: 10px;
+  }
+    section#section1{
+      padding: 20px;
+      height:150vh;
+      overflow-y: auto; /* Habilita el desplazamiento solo en el section */
+    }
+  section#section3{
+    padding: 20px;
+    height:150vh;
+    overflow-y: auto; /* Habilita el desplazamiento solo en el section */
+    background-color: #00000000;
+}
+    section {
+        padding: 20px;
+        height:90vh;
+        overflow-y: auto; /* Habilita el desplazamiento solo en el section */
+        background-color: rgba(0, 0, 0, 0.562);
+    }
+    section#bienvenida {
+        display: block;
+    }
+      
+    h1{
+        padding-left:45px;
+    }
+    h3{
+        color:rgba(255, 0, 0, 0.95);
+    }
+    /*BARRA MENU*/
+    #nav-button {
+      cursor: pointer;
+      justify-content: center;
+      align-items: center;
+      display:flex;
+    }
+    
+    #nav-button span,
+    #nav-button span:after,
+    #nav-button span:before {
+      transition: all 500ms ease-in-out;
+      border-radius: 1px;
+      height: 5px;
+      width: 40px;
+      position: absolute;
+      display: block;
+      content: "";
+      background: white; /*COLOR DE MENU*/
+    }
+    
+    #nav-button span:before {
+      top: -10px;
+    }
+    #nav-button span:after {
+      bottom: -10px;
+    }
+    
+    #nav-button.active span {
+      background-color: transparent;
+    }
+    
+    #nav-button.active span:before,
+    #nav-button.active span:after {
+      top: 0;
+    }
+    
+    #nav-button.active span:after {
+      transform: rotate(-45deg);
+    }
+    
+    #nav-button.active span:before {
+      transform: rotate(45deg);
+    }
+    /*GALERIA IMAGENES*/
+ .tarjeta {
+    flex: 0 0 auto;
+    background-color: rgb(0, 0, 0);
+}
+.contenedor-tarjeta {
+    border: 1px solid #cccccc54;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    margin-bottom: 20px;
+    margin-top:-10px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    flex: 0 0 calc(33.33% - 20px); /* Ajustar el tamaño de los contenedores */
+
+}
+.oculto {
+  display: none; /* Ocultar los contenedores */
+}
+.contenedor-tarjetas{
+  flex-wrap: wrap; /* Permitir el ajuste de múltiples líneas */
+}
+.imagen {
+    flex: 1;
+}
+
+.imagen img {
+    width: 175px;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+.detalles {
+    flex: 2;
+    padding: 10px;
+}
+
+.detalles h3 {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.detalles p {
+    margin: 5px 0;
+}
+}
+  /* Estilos para el menú */
+  #menu {
+    display: none;
+    position: fixed;
+    top: 600px;
+    left:240px;
+    transform: translate(-50%, -50%);
+    background-color: #000000f8;
+    border-radius: 5px;
+    z-index: 1000; /* Un valor alto para asegurar que esté en la parte superior */
+    width:110%;
+    height:700px;
+    overflow:hidden;
+    margin-top:-66px;
+    margin-left:-9px;
+}
+#menu button {
+    display: block;
+    width:70%;
+    margin-left:95px;
+    padding: 20px;
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.829);
+    color: rgba(0, 0, 0, 0.658);
+    font-size: 18px;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    margin-top:98px;
+}
+  
+/* MANGAS */
+.folder-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    margin-top: 20px;
+  }
+
+  .folder-button {
+    cursor: pointer;
+    transition: background-color 0.3s;
+    transform: translate(5px, 80%);
+
+  }
+
+  .folder-button img {
+    width: 165px;
+    height: 125px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+  .folder-button:hover {
+    background-color: #e9d73a;
+  }
+
+  /* Nueva sección para la visualización de páginas individuales */
+  .page-viewer {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .viewer-buttons {
+    display: flex;
+    margin-left:150px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+  }
+
+  .viewer-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+  }
+
+  .viewer-button:hover {
+    background-color: #45a049;
+  }
+
+  .close-button {
+    background-color: #f44336;
+    padding:5px;
+  }
+  .folder-name {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #333;
+  }
+
+  /*MENU DE FILTROS*/
+
+    /* Estilos para el botón fijo */
+    .fixed-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Estilos para el símbolo del botón de filtro */
+    .filter-icon {
+      width: 30px;
+      height: 30px;
+    }
+
+    /* Estilos para la pantalla emergente */
+    .filter-popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .filter-popup-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 80%;
+    }
+  /* Estilos para el botón de filtro */
+  #filterBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Para asegurar que esté encima de otros elementos */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  /* Estilo para la imagen dentro del botón */
+  #filterBtn img {
+    width: 30px;
+    height: 30px;
+    margin-top: 5px;
+  }
+
+/* Estilos para el menú */
+#filterMenu {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  background-color: rgba(122, 116, 116, 0.397);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 100% 100%;
+}
+
+
+/* Estilos para los elementos dentro del menú */
+#filterMenu input,
+#filterMenu button {
+    margin: 5px;
+}
+#filterMenu input{
+  width: 192px;
+}
+  /* Estilos para el botón de aplicar filtro */
+  #applyFilterBtn {
+    background-color: #0530a8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    width: 200px;
+  }
+
+  #resetFilterBtn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    display: none; /* Ocultar inicialmente el botón de reset */
+    width: 200px;
+  }
+  #contenedorFiltros{
+    padding:30px 30px;
+    background-color: #0531a82c;
+  }

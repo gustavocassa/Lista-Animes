@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lista Animes</title>
+    <link rel="stylesheet" href="telefono.css">
+    <link rel="icon" href="logo.webp">
+</head>
+<body>
+    <header>
+        <a href="telefono.html" style="color:white; text-decoration:none; margin-left:-20px;"><h1>Anime List</h1></a>
+        
+        <a id="nav-button" href="#" style="margin-left: 150px;">
+            <span></span>
+          </a>
+
+    </header>
+
+
+     <!-- Overlay para el menú -->
+     <section id="menu-overlay" style="background-image: url('fondo3.webp'); background-size: cover;">
+        <div id="menu-buttons">
+           
+            <!-- Agrega más botones según sea necesario -->
+        </div>
+    </section>
+
+  <section id="menu" style="display: none; left:185px; top:505px;">
+        <button onclick="mostrarSeccion('seccion1')">Anime</button>
+        <button onclick="mostrarSeccion('seccion2')">Leer Manga</button>
+        <button onclick="toggleMenu()">Volver al Menú</button>
+    </section>
+    
+    <section id="bienvenidoSeccion" style="background-image: url('fondo3.webp'); background-size: cover;">   
+    </section>
+    <!--  
+    Ao no Exorcist 
+    Another
+    Baki
+    Black Bullet
+    Black Clover
+    Boruto
+    Boku no Hero
+    Blue Lock
+    Bunny Girl Senpai
+    Chainsaw Man
+    Classroom of the Elite
+    Darling in the Franxx
+    Death Note
+    Dragon Ball
+    Dragon Ball GT
+    Dragon Ball Super
+    Dragon Ball Z
+    Dragon Ball Z Kai
+    Dr. Stone
+    Elfen Lied
+    Fire Force
+    Fuufu Ijou, Koibito Miman
+    Genjitsu Shugi Yuusha no Oukoku Saikenki
+    Hell's Paradise
+    Jujutsu Kaisen
+    Kaguya Sama
+    Kabaneri of the Iron Fortress
+    Kenja no Mago
+    Kimetsu no Yaiba
+    La Eminencia de la Sombra
+    Mushoku Tensei
+    Nanatsu no Taizai
+    Naruto
+    Naruto Shippuden
+    Noumin Kanren no Skill bakka Agetetara Nazeka
+    One Piece
+    One Punch Man
+    Oshi no Ko
+    Pokemon
+    Rent a Girlfriend
+    Shingeki no Kyojin
+    Sono Bisque Doll
+    Solo Leveling
+    Spy x Family
+    Sword Art Online
+    Talentless Nana
+    The Promised Neverland
+    Tokyo Ghoul
+    Tokyo Ghoul √A
+    Tokyo Ghoul RE
+    Tokyo Revengers
+    Tomo-chan
+    Yofukashi no Uta
+    Your Lie in April
+    Zom 100
+    // SON 55 EN TOTAL   
+    AL LLEGAR A LA ULTIMA IMAGEN DESABILITAR SIGUIENTE
+    AGREGAR PARTE PARA LOS QUE TODAVIA NO TERMINE [FECHA, EPISODIO]
+-->
+
+    <section id="seccion1" style="display: none; margin-bottom: 20px; background-color: rgba(0, 0, 0, 1);"><!-- ANIMES -->
+
+        <div class="contenedor-tarjetas"> 
+            <div class="tarjeta">
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="ao no Exorcist.webp" alt="Imagen 1" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Ao no Exorcist</h3>
+                        <p>Género: Acción, Sobrenatural, Fantasía</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="another.webp" alt="Imagen 1" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Another</h3>
+                        <p>Género: Misterio, Terror, Sobrenatural, Thriller, Gore</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+            <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="asesination.webp" alt="Imagen 1" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Asesination Classroom</h3>
+                        <p>Género: Acción, ciencia ficción, comedia dramática</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+            <div class="tarjeta">
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="baki.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Baki</h3>
+                        <p>Género: Acción, Artes Marciales, Shonen</p>
+                        <p>Calificación: 8.5</p>
+                    </div>
+                </div>
+            <div class="tarjeta">
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="black bullet.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Black Bullet</h3>
+                        <p>Género: Acción, Ciencia Ficción, Fantasía, Seinen</p>
+                        <p>Calificación: 8.5</p>
+                </div>
+            </div>
+            <div class="contenedor-tarjeta" >
+                <div class="imagen"><img src="black clover.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                <div class="detalles">
+                    <h3>Black Clover</h3>
+                    <p>Género: Acción, Comedia, Fantasía, Magia, Shonen</p>
+                    <p>Calificación: 9.0</p>
+                </div>
+            </div>  
+            <div class="tarjeta">
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="boruto.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Boruto</h3>
+                        <p>Género: Acción, Aventura, Comedia, Superpoderes, Shonen</p>
+                        <p>Calificación: 8.5</p>
+                    </div>
+            </div>
+            <div class="tarjeta">
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="boku-no-hero.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Boku no Hero</h3>
+                        <p>Género: Acción, Comedia, Superpoderes, Escolar, Shonen</p>
+                        <p>Calificación: 7.8</p>
+                    </div>
+            </div>
+            <div class="contenedor-tarjeta">
+                <div class="imagen"><img src="blue lock.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                <div class="detalles">
+                    <h3>Blue Lock</h3>
+                    <p>Género: Deportes, Psicológico, Shonen</p>
+                    <p>Calificación: 9.0</p>
+                </div>
+            </div>
+            <div class="tarjeta">
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="BunnyGirlSenpai.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Bunny Girl Senpai</h3>
+                        <p>Género: Comedia, Drama, Romance, Escolar, Sobrenatural</p>
+                        <p>Calificación: 8.5</p>
+                    </div>
+                </div>
+            <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="chainsawman.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Chainsaw Man</h3>
+                        <p>Género: Acción, Aventura, Comedia, Sobrenatural, Shonen</p>
+                        <p>Calificación: 8.5</p>
+                    </div>
+                </div>    
+            <div class="tarjeta">
+            <div class="contenedor-tarjeta">
+                <div class="imagen"><img src="classroom-of-the-elite.webp" alt="Imagen 1" style="filter: brightness(0.7);"></div>
+                <div class="detalles">
+                    <h3>Classroom of the Elite</h3>
+                    <p>Género: Escolar, Psicológico</p>
+                    <p>Calificación: 9.0</p>
+                    </div>
+            </div>
+            <div class="tarjeta">
+            
+            <div class="tarjeta">
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="darling in the franxx.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Darling in the Franxx</h3>
+                        <p>Género: Acción, Drama, Mecha, Romance, Ciencia Ficción</p>
+                        <p>Calificación: 8.5</p>
+                    </div>
+            </div>
+            <div class="tarjeta">
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="Death-Note.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Death Note</h3>
+                        <p>Género: Misterio, Psicológico, Sobrenatural, Thriller</p>
+                        <p>Calificación: 8.5</p>
+                </div>
+            </div>  
+            <div class="tarjeta">
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="dragon ball.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Dragon Ball</h3>
+                        <p>Género: Acción, Aventura, Comedia, Shonen, Superpoderes</p>
+                        <p>Calificación: 8.5</p>
+                </div>
+            </div>
+            <div class="tarjeta">
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="dragon ball gt.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Dragon Ball GT</h3>
+                        <p>Género: Acción, Aventura, Comedia, Fantasía, Shonen, Superpoderes</p>
+                        <p>Calificación: 8.5</p>
+                </div>
+            </div>
+             
+            <div class="tarjeta">
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="dragon-ball-super.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Dragon Ball Super</h3>
+                        <p>Género: Acción, Aventura, Comedia, Fantasía, Shonen, Superpoderes</p>
+                        <p>Calificación: 8.5</p>
+                    </div>
+            </div>
+            <div class="tarjeta">
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="dragon-ball-z.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Dragon Ball Z</h3>
+                        <p>Género: Acción, Aventura, Comedia, Fantasía, Shonen, Superpoderes</p>
+                        <p>Calificación: 8.5</p>
+                    </div>
+            </div>
+            <div class="tarjeta">
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="dragon-ball-z-kai.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Dragon Ball Z Kai</h3>
+                        <p>Género: Acción, Aventura, Comedia, Fantasía, Shonen, Superpoderes</p>
+                        <p>Calificación: 8.5</p>
+                </div>
+            </div>
+            <div class="tarjeta">
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="dr.stone.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Dr. Stone</h3>
+                        <p>Género: Aventura, Ciencia, Shonen</p>
+                        <p>Calificación: 8.5</p>
+                </div>
+            </div>
+            <div class="tarjeta">
+                <div class="contenedor-tarjeta">
+                     <div class="imagen"><img src="Elfien Lied.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                     <div class="detalles">
+                         <h3>Elfen Lied</h3>
+                         <p>Género: Drama, Horror, Psicológico, Romance, Sobrenatural, Seinen</p>
+                         <p>Calificación: 8.5</p>
+                    </div>
+                </div>
+            <div class="tarjeta">
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="fire-force.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Fire Force</h3>
+                        <p>Género: Acción, Sobrenatural, Fantasía, Shonen</p>
+                        <p>Calificación: 8.5</p>
+                    </div>
+            </div>
+          <!--  <div class="tarjeta">
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="../img/frieren.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Frieren: Beyond Journey's End</h3>
+                        <p>Género: Ficción de aventuras, Drama, Género fantástico, Shonen</p>
+                        <p>Calificación: 8.5</p>
+                    </div>
+            </div>
+            -->
+            <div class="tarjeta">
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="Fuufu Ijou, Koibito Miman.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Fuufu Ijou, Koibito Miman</h3>
+                        <p>Género: Comedia, Romance, Seinen</p>
+                        <p>Calificación: 8.5</p>
+                    </div>
+            </div>
+            <div class="tarjeta">
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="Genjitsu Shugi Yuusha no Oukoku Saikenki.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Genjitsu Shugi Yuusha no Oukoku Saikenki</h3>
+                        <p>Género: Acción, fantasía, harem, isekai, magia, militar, romance</p>
+                        <p>Calificación: 8.5</p>
+                    </div>
+                </div>
+                <div class="tarjeta">
+                    <div class="contenedor-tarjeta">
+                        <div class="imagen"><img src="Hell's Paradise.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                        <div class="detalles">
+                            <h3>Hell's Paradise</h3>
+                            <p>Género: Acción, Aventura, Drama, Horror, Psicológico, Seinen</p>
+                            <p>Calificación: 8.5</p>
+                        </div>
+                    </div>
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="Jujutsu-Kaisen.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Jujutsu Kaisen</h3>
+                        <p>Género: Acción, Demonios, Escolar, Sobrenatural, Shonen</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="Kaguya Sama.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Kaguya Sama</h3>
+                        <p>Género: Comedia, Romance, Psicológico, Escolar, Seinen</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+                <div class="tarjeta">
+                    <div class="contenedor-tarjeta">
+                         <div class="imagen"><img src="Kabaneri of the Iron Fortress.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                         <div class="detalles">
+                            <h3>Kabaneri of the Iron Fortress</h3>
+                            <p>Género: Acción, Drama, Fantasía, Horror, Samurai, Shonen</p>
+                            <p>Calificación: 8.5</p>
+                        </div>
+                    </div>
+               <!--
+                    <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="../img/kakegurui.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Kakegurui</h3>
+                        <p>Género: Drama, escolar, misterio, thriller psicológico</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+            -->
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="Kenja no Mago.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Kenja no Mago</h3>
+                        <p>Género: Acción, Aventura, Comedia, Magia, Fantasía, Shonen</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="Kimetsu-no-Yaiba.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Kimetsu no Yaiba</h3>
+                        <p>Género: Acción, Demonios, Histórico, Sobrenatural, Shonen</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="La-Eminencia-de-la-Sombra.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>La Eminencia de la Sombra</h3>
+                        <p>Género: Acción, Aventura, Fantasía, Isekai</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>  
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="Mushoku-Tensei.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Mushoku Tensei</h3>
+                        <p>Género: Aventura, Drama, Fantasía, Isekai</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="nanatsu no taizai.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Nanatsu no Taizai</h3>
+                        <p>Género: Acción, Aventura, Comedia, Fantasía, Sobrenatural, Shonen</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="naruto.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Naruto</h3>
+                        <p>Género: Acción, Aventura, Comedia, Superpoderes, Shonen</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="naruto-shippuden.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Naruto Shippuden</h3>
+                        <p>Género: Acción, Aventura, Comedia, Superpoderes, Shonen</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="Noumin Kanren no Skill bakka Agetetara.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Noumin Kanren no Skill bakka Agetetara Nazeka</h3>
+                        <p>Género: Acción, Aventura, Comedia, Fantasía, Harem, Magia</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+                <div class="tarjeta">
+                    <div class="contenedor-tarjeta">
+                        <div class="imagen"><img src="lycoris.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                        <div class="detalles">
+                            <h3>Lycoris Recoil</h3>
+                            <p>Género: Drama, acción, </p>
+                            <p>Calificación: 8.5</p>
+                        </div>
+                </div>
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="One-Piece.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>One Piece</h3>
+                        <p>Género: Acción, Aventura, Comedia, Drama, Fantasía, Shonen</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="one punch man.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>One Punch Man</h3>
+                        <p>Género: Acción, Comedia, Parodia, Sci-Fi, Seinen, Superpoderes</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="Oshi no Ko.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Oshi no Ko</h3>
+                        <p>Género: Drama, Romance, Seinen</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="Pokemon.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Pokemon</h3>
+                        <p>Género: Acción, Aventura, Comedia, Fantasía, Shonen</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="rent-a-girlfriend.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Rent a Girlfriend</h3>
+                        <p>Género: Comedia, Drama, Romance, Slice of Life</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="Shingeki no Kyojin.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Shingeki no Kyojin</h3>
+                        <p>Género: Acción, Drama, Fantasía, Horror, Misterio, Shonen</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="Sono Bisque Doll wa Koi wo Suru.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Sono Bisque Doll</h3>
+                        <p>Género: Comedia, Drama, Romance, Seinen</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="solo-leveling.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Solo Leveling</h3>
+                        <p>Género: Acción, Aventura, Fantasía, Sobrenatural</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="Spy x Family.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Spy x Family</h3>
+                        <p>Género: Acción, Comedia, Espías, Shonen</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="Sword Art Online.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Sword Art Online</h3>
+                        <p>Género: Acción, Aventura, Fantasía, Romance, Sci-Fi</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="Talentless Nana.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Talentless Nana</h3>
+                        <p>Género: Misterio, Psicológico, Sobrenatural, Shonen</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+                <div class="tarjeta">
+                    <div class="contenedor-tarjeta">
+                        <div class="imagen"><img src="tengoku.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                        <div class="detalles">
+                            <h3>Tengoku Daimakyou</h3>
+                            <p>Género: ciencia ficción y misterio</p>
+                            <p>Calificación: 9.5</p>
+                        </div>
+                </div>
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="The-Promised-Neverland.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>The Promised Neverland</h3>
+                        <p>Género: Misterio, Psicológico, Suspenso, Shonen</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="Tokyo-Ghoul.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Tokyo Ghoul</h3>
+                        <p>Género: Drama, Horror, Misterio, Psicológico, Seinen, Sobrenatural</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="Tokyo-Ghoul-RE.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Tokyo Ghoul RE</h3>
+                        <p>Género: Drama, Horror, Misterio, Psicológico, Seinen, Sobrenatural</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="tokyo-ghoul-√A.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Tokyo Ghoul √A</h3>
+                        <p>Género: Drama, Horror, Misterio, Psicológico, Seinen, Sobrenatural</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="Tokyo Revengers.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Tokyo Revengers</h3>
+                        <p>Género: Acción, Drama, Romance, Escolar, Shonen</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="Tomo-chan.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Tomo-chan</h3>
+                        <p>Género: Comedia, Romance, Shonen</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+                
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="Yofukashi No Uta.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Yofukashi no Uta</h3>
+                        <p>Género: Misterio, Psicológico, Romance, Sobrenatural</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div>
+                
+                <div class="contenedor-tarjeta">
+                    <div class="imagen"><img src="your lie in april.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                    <div class="detalles">
+                        <h3>Your Lie in April</h3>
+                        <p>Género: Drama, Música, Romance, Escolar, Shonen</p>
+                        <p>Calificación: 9.0</p>
+                    </div>
+                </div> 
+                <div class="contenedor-tarjeta" style="margin-bottom: 30px;">
+                        <div class="imagen"><img src="Zom 100.webp" alt="Imagen 2" style="filter: brightness(0.7);"></div>
+                        <div class="detalles">
+                            <h3>Zom 100</h3>
+                            <p>Género: Comedia, Horror, Psicológico, Seinen, Sobrenatural</p>
+                            <p>Calificación: 9.0</p>
+                        </div>
+                    </div>
+                                <!-- Agrega más tarjetas según sea necesario -->
+</div>
+<div id="contador-divs" style="margin-bottom: 30px; background-color: #01237D;"></div>
+
+ <!-- Botón de filtro -->
+ <button id="filterBtn"><img src="filtrar.png" style="width:30px;height: 30px; margin-top:5px;   pointer-events: none;" ></button>
+
+ <!-- Menú de filtro -->
+ <div id="filterMenu">
+    <div id="contenedorFiltros">
+   <input type="text" id="filterInput" placeholder="Buscar...">
+   <button id="applyFilterBtn">Aplicar Filtro</button>
+   <button id="resetFilterBtn">Resetear Filtro</button>
+    </div>
+ </div>
+
+<br><br><br>
+
+
+    </section>
+
+    <section id="seccion2" style="display: none; margin-left:-10px; background-color: rgb(0, 0, 0);"><!-- MANGAS -->
+    
+    
+<div id="folder-buttons" class="folder-buttons">
+    
+    <button class="folder-button" onclick="changeFolder('Tomo 1 Dr. Stone')">
+      <img src="mangas/portadas/senku.webp" alt="Dr. Stone">
+      <span class="folder-name">Dr. Stone</span>
+    </button>
+  
+    <button class="folder-button" onclick="changeFolder('Tomo 1 Naruto')">
+      <img src="mangas/portadas/naruto.webp" alt="Naruto">
+      <span class="folder-name">Naruto</span>
+    </button>
+  
+    <button class="folder-button" onclick="changeFolder('Tomo 1 One Piece')">
+      <img src="mangas/portadas/luffy.webp" alt="One Piece">
+      <span class="folder-name">One Piece</span>
+    </button>
+
+    <button class="folder-button" onclick="changeFolder('Tomo 1 Black Clover')">
+      <img src="mangas/portadas/asta.webp" alt="Black Clover">
+      <span class="folder-name">Black Clover</span>
+    </button>
+  </div>
+  
+  <!-- Sección de visualización de páginas individuales -->
+  <div id="page-viewer" class="page-viewer" style="margin-top:-10px;">
+    <img id="manga-img" alt="Manga Page" style="width:370px; height:550px;">
+    <div class="viewer-buttons">
+      <button class="viewer-button" onclick="previousPage()" style="background-color: #026103;">Anterior</button>
+      <div class="page-number" id="page-number" style="margin:10px; color:white;"></div>
+      <button class="viewer-button" onclick="nextPage()" style="background-color: #026103;">Siguiente</button>
+    </div>
+    <div id="volume-selector" style="color: white; margin-bottom: 5px;">
+      <label for="volumeSelect">Seleccionar Tomo:</label>
+      <select id="volumeSelect" onchange="changeVolume(this.value)" style="background-color: #3C3C3C;">
+      </select>
+    </div>
+    <button class="viewer-button close-button" onclick="closeViewer()" style="background-color: #BA0300;">Volver a Mangas</button>
+  </div>
+
+    </section>
+  
+
+    <script>        //MENU
+
+        document.getElementById('nav-button').addEventListener('click', toggleMenu);
+    
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
+            document.body.style.overflow = (menu.style.display === 'none' || menu.style.display === '') ? 'hidden' : 'hidden';
+    
+            // Este código adicional está tomado del script original que cerraba el menú y realizaba otras acciones
+            var bienvenidoSeccion = document.getElementById('bienvenidoSeccion');
+    
+            if (menu.style.display === 'block') {
+                // Ocultar la sección de bienvenida cuando se abre el menú
+                bienvenidoSeccion.style.display = 'none';
+            } else {
+                // Mostrar la sección de bienvenida al cerrar el menú
+                bienvenidoSeccion.style.display = 'block';
+    
+                // Ocultar otras secciones al cerrar el menú
+                var secciones = document.getElementsByTagName('section');
+                for (var i = 0; i < secciones.length; i++) {
+                    if (secciones[i].id !== 'bienvenidoSeccion') {
+                        secciones[i].style.display = 'none';
+                    }
+                }
+            }
+        }
+    
+        function mostrarSeccion(seccionId) {
+            // Ocultar todas las secciones
+            var secciones = document.getElementsByTagName('section');
+            for (var i = 0; i < secciones.length; i++) {
+                secciones[i].style.display = 'none';
+            }
+    
+            // Mostrar la sección seleccionada
+            document.getElementById(seccionId).style.display = 'block';
+    
+            // Cerrar el menú después de mostrar la sección (puedes ajustar esto según tus necesidades)
+            var menu = document.getElementById('menu');
+            menu.style.display = 'none';
+            document.body.style.overflow = 'hidden';
+        }
+    </script>
+    <script> //MANGAS
+        var currentPage = 1;
+      var totalPages = 56; // Actualiza esto con el número total de páginas
+      var currentFolder = "Tomo 1 Dr. Stone";
+      
+      function loadImage() {
+        var imagePath = `mangas/${currentFolder}/pag${currentPage}.webp`;
+      
+        document.getElementById("manga-img").addEventListener('load', function () {
+          console.log('Imagen cargada con éxito');
+          updatePageNumber();
+      
+          // Verificar si la página actual es la última del tomo actual
+          if (currentPage === totalPages) {
+            goToNextVolume();
+          }
+        });
+      
+        document.getElementById("manga-img").addEventListener('error', function () {
+          console.log('Error al cargar la imagen');
+          showEndOfAllTomosMessage();
+          disableNavigation();
+        });
+      
+        document.getElementById("manga-img").src = imagePath;
+      }
+      
+      function showEndOfAllTomosMessage() {
+        var endOfAllTomosMessage = document.getElementById("end-of-all-tomos-message");
+        endOfAllTomosMessage.style.display = "block";
+      }
+      
+      function disableNavigation() {
+        document.getElementById("next-button").disabled = true;
+        document.getElementById("prev-button").disabled = true;
+      }
+      
+      function enableNavigation() {
+        document.getElementById("next-button").disabled = false;
+        document.getElementById("prev-button").disabled = false;
+      }
+      
+      function changeFolder(newFolder) {
+        currentFolder = newFolder;
+        currentPage = 1;
+        loadImage();
+        toggleSections(); // Mostrar la sección de visualización de páginas
+        populateVolumeSelector(); // Actualizar el menú desplegable con los tomos disponibles
+      }
+      
+      function nextPage() {
+        if (currentPage < totalPages) {
+          currentPage++;
+          loadImage();
+        }
+      }
+      
+      function previousPage() {
+        if (currentPage > 1) {
+          currentPage--;
+          loadImage();
+        }
+      }
+      
+      function updatePageNumber() {
+        document.getElementById("page-number").innerText = "" + currentPage;
+      }
+      
+      function toggleSections() {
+        document.getElementById("folder-buttons").style.display = "none";
+        document.getElementById("page-viewer").style.display = "flex";
+      }
+      
+      function closeViewer() {
+        document.getElementById("folder-buttons").style.display = "grid";
+        document.getElementById("page-viewer").style.display = "none";
+      }
+      
+      function goToNextVolume() {
+        var currentVolumeNumber = parseInt(currentFolder.match(/\d+/)[0]);
+        var nextVolumeNumber = currentVolumeNumber + 1;
+        var nextVolumeFolder = currentFolder.replace(currentVolumeNumber, nextVolumeNumber);
+      
+        if (folderExists(nextVolumeFolder)) {
+          currentFolder = nextVolumeFolder;
+          currentPage = 1;
+          loadImage();
+          populateVolumeSelector(); // Actualizar el menú desplegable con los tomos disponibles
+        } else {
+          showEndOfAllTomosMessage();
+          disableNavigation();
+        }
+      }
+      
+      function folderExists(folderName) {
+        // Implementa la lógica real para verificar la existencia de la carpeta
+        return true; // Cambia esto según tus necesidades
+      }
+      
+      function populateVolumeSelector() {
+        var volumeSelect = document.getElementById("volumeSelect");
+        volumeSelect.innerHTML = ""; // Limpiar el menú desplegable
+      
+        var volumeCount = getVolumeCount(currentFolder);
+      
+        if (volumeCount > 1) {
+          for (var i = 1; i <= volumeCount; i++) {
+            var option = document.createElement("option");
+            option.value = i;
+            option.text = "Tomo " + i;
+            volumeSelect.add(option);
+          }
+        }
+      }
+      
+      function getVolumeCount(folderPath) {
+        var mangaVolumes = {
+          'Tomo 1 Dr. Stone': 1,
+          'Tomo 1 Naruto': 1,
+          'Tomo 1 One Piece': 2,
+          'Tomo 1 Black Clover': 1
+          // Agrega más mangas según sea necesario con el número de tomos correspondiente
+        };
+      
+        return mangaVolumes[folderPath] || 0;
+      }
+      
+      function changeVolume(selectedVolume) {
+        var newFolder = currentFolder.replace(/\d+/, selectedVolume);
+        currentFolder = newFolder;
+        currentPage = 1;
+        loadImage();
+      }
+      
+      window.onload = function () {
+        loadImage();
+      };
+      
+      function closeViewer() {
+        document.getElementById("folder-buttons").style.display = "grid";
+        document.getElementById("page-viewer").style.display = "none";
+        hideEndOfAllTomosMessage(); // Agrega esta línea para ocultar el mensaje al cerrar el visor
+      }
+      
+      function hideEndOfAllTomosMessage() {
+        var endOfAllTomosMessage = document.getElementById("end-of-all-tomos-message");
+        endOfAllTomosMessage.style.display = "none";
+      }
+      function showEndOfAllTomosMessage() {
+        var endOfAllTomosMessage = document.getElementById("end-of-all-tomos-message");
+        endOfAllTomosMessage.style.display = "block";
+        document.getElementById("manga-img").style.display = "none"; // Ocultar la imagen al mostrar el mensaje
+      }
+      function hideEndOfAllTomosMessage() {
+        var endOfAllTomosMessage = document.getElementById("end-of-all-tomos-message");
+        endOfAllTomosMessage.style.display = "none";
+        document.getElementById("manga-img").style.display = "block"; // Mostrar la imagen al ocultar el mensaje
+      }
+    </script>
+    <script> //BOTON MENU ANIMACION
+    document.querySelector("#nav-button").addEventListener("click", function () {
+     this.classList.toggle("active");
+   });
+   
+    </script>
+    <script> //CANTIDAD DE ANIMES
+  document.addEventListener("DOMContentLoaded", function() {
+    // Obtener todos los elementos div con la clase "contenedor-tarjetas"
+    var contenedorTarjetas = document.querySelectorAll('.contenedor-tarjeta');
+    
+    // Mostrar la cantidad total de divs con la clase "contenedor-tarjetas"
+    var contadorDivs = document.createElement('div');
+    contadorDivs.textContent = "Cantidad de Animes Vistos:" + contenedorTarjetas.length;
+    document.getElementById('contador-divs').appendChild(contadorDivs);
+});
+   </script>
+
+
+<script>
+    var filterBtn = document.getElementById('filterBtn');
+    var filterMenu = document.getElementById('filterMenu');
+    var applyFilterBtn = document.getElementById('applyFilterBtn');
+    var resetFilterBtn = document.getElementById('resetFilterBtn');
+    var filterInput = document.getElementById('filterInput');
+    var containers = document.getElementsByClassName('contenedor-tarjeta');
+
+    filterBtn.addEventListener('click', function() {
+      filterMenu.style.display = filterMenu.style.display === 'block' ? 'none' : 'block';
+    });
+
+    document.addEventListener('click', function(event) {
+      if (!filterMenu.contains(event.target) && event.target !== filterBtn) {
+        filterMenu.style.display = 'none';
+      }
+    });
+
+    applyFilterBtn.addEventListener('click', function() {
+      var filterText = filterInput.value.toLowerCase();
+      for (var i = 0; i < containers.length; i++) {
+        var p = containers[i].getElementsByTagName('p')[0];
+        var h3 = containers[i].getElementsByTagName('h3')[0];
+        if (filterText !== '' && 
+            (p.innerHTML.toLowerCase().indexOf(filterText) === -1 &&
+             h3.innerHTML.toLowerCase().indexOf(filterText) === -1)) {
+          containers[i].classList.add('oculto');
+        } else {
+          containers[i].classList.remove('oculto');
+        }
+      }
+      toggleResetBtn();
+      filterMenu.style.display = 'none';
+    });
+
+    resetFilterBtn.addEventListener('click', function() {
+      filterInput.value = '';
+      for (var i = 0; i < containers.length; i++) {
+        containers[i].classList.remove('oculto');
+      }
+      toggleResetBtn();
+      filterMenu.style.display = 'none';
+    });
+
+    function toggleResetBtn() {
+      resetFilterBtn.style.display = filterInput.value !== '' ? 'inline-block' : 'none';
+    }
+  </script>
+    <script>
+    var filterMenu = document.getElementById('filterMenu');
+
+    function toggleFilterMenu() {
+      filterMenu.style.display = filterMenu.style.display === 'block' ? 'none' : 'block';
+    }
+
+    document.addEventListener('click', function(event) {
+      if (!filterMenu.contains(event.target) && event.target.id !== 'filterBtn') {
+        filterMenu.style.display = 'none';
+      }
+    });
+  </script>
+
+<script>
+    // Función para redireccionar si el ancho de la pantalla es mayor o igual a 420px
+    function redirigirSegunTamanoPantalla() {
+        // Obtener el ancho de la pantalla
+        var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+        // Si estamos en la página 'telefono.html' y el ancho de la pantalla es mayor o igual a 420px
+        if (esPaginaTelefono() && screenWidth > 425) {
+            // Redireccionar a la página 'prueba.html'
+            window.location.href = 'prueba.html';
+        }
+    }
+
+    // Función para verificar si estamos en la página 'telefono.html'
+    function esPaginaTelefono() {
+        return window.location.href.indexOf('telefono.html') !== -1;
+    }
+
+    // Llamar a la función al cargar la página
+    redirigirSegunTamanoPantalla();
+
+    // También puedes llamar a esta función cuando se redimensiona la ventana
+    window.onresize = function() {
+        redirigirSegunTamanoPantalla();
+    };
+</script>
+
+
+</body>
+</html>
