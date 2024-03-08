@@ -16,7 +16,7 @@
     color: #ffffff;
   }
 
-  header {
+   header {
     position: fixed;
     top: 0;
     left: 0;
@@ -47,14 +47,14 @@
     opacity: 1;
   }
 
-    #gallery {
+   #gallery {
   display: grid; /* Establece el contenedor como una cuadrícula */
   grid-template-columns: repeat(5, 200px); /* Define 5 columnas de 200px cada una */
   grid-template-rows: repeat(5, 200px); /* Define 5 filas de 200px cada una */
   grid-gap: 20px; /* Establece un espacio de 20px entre las celdas de la cuadrícula */
-  margin-top: 100px; /* Establece un margen superior de 100px */
+  margin-top: 150px; /* Establece un margen superior de 100px */
   padding-left: 150px; /* Establece un relleno de 150px en el lado izquierdo */
-  margin-bottom: 20px; /* Establece un margen inferior de 20px */
+  margin-bottom: 40px; /* Establece un margen inferior de 20px */
   margin-left: auto; /* Centra el contenedor horizontalmente */
   margin-right: auto; /* Centra el contenedor horizontalmente */
   max-width: 1200px; /* Establece el ancho máximo del contenedor en 1200px */
@@ -174,6 +174,7 @@
   <nav>
     <ul>
       <input type="text" id="searchInput" placeholder="Buscar...">
+       <p>Animes Vustis: <span id="contador"></span></p>
       <li style="margin-top: 10px;"><a href="#" id="resetFilters" class="category">Eliminar filtros</a></li>
 
       <div class="dropdown">
@@ -396,6 +397,12 @@ resetFiltersButton.addEventListener("click", () => {
   window.onresize = function() {
     redirigirSegunTamanoPantalla();
   };
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var elementos = document.querySelectorAll('.image');
+    document.getElementById('contador').innerText = elementos.length;
+});
 </script>
 </body>
 </html>
